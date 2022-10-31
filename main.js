@@ -20,13 +20,15 @@ app.addEventListener("click", function(event){
 
 
 async function open_terminal(){
-  await delay(4000)
-  createCode("execute_terminal","ok");
   await delay(700);
   createCode("connecting...","");
   await delay(4900);
-  createCode("almost done.....","");
-  await delay(4900);
+  createCode(".","");
+  await delay(1000);
+  createCode(".","");
+  await delay(1000);
+  createCode(".","");
+  await delay(1000);
   createCode("connected!","welcome.");
   await delay(100)
   createText("suggested commands:");
@@ -48,7 +50,7 @@ function new_line(){
   p.setAttribute("class", "path")
   p.textContent = "# user";
   span1.textContent = " in";
-  span2.textContent = " ~/guest505";
+  span2.textContent = " ~/root";
   p.appendChild(span1);
   p.appendChild(span2);
   app.appendChild(p);
@@ -75,8 +77,8 @@ async function getInputValue(){
   if(value === "cmds"){
     trueValue(value);
     
-    createCode("projects", "list of all the projects i've worked on");
-    createCode("whois", "info on me");
+    createCode("", "list of all the projects i've worked on");
+    createCode("about", "info on me");
     createCode("socials", "where to find me");
     createCode("info", "website info e.g version number");
     createCode("clear", "clears the terminal");
@@ -87,7 +89,7 @@ async function getInputValue(){
     trueValue(value);
     createText("coming soon")
   }
-  else if(value === "whois"){
+  else if(value === "about"){
     trueValue(value);
     createText("hi there, my name's *epic*")
     createText("currently learning html")
@@ -106,16 +108,16 @@ async function getInputValue(){
 
   else if(value === "info"){
     trueValue(value);
-    createCode("domain:", "repl.co")
+    createCode("domain:", "github.io")
     createCode("version:", "2.1.0")
     createCode("framework:","vanilla")
-    createCode("host:", "replit")
-    createCode("last modified:", "oct 30, 2022 @ 20:13:58pm gmt")
+    createCode("host:", "github")
+    createCode("last modified:", "oct 31, 2022 @ 22:05:58pm gmt")
   }
 
   else if (value === "ami") {
     trueValue(value);
-    createText('<i class="fa-solid fa-dog"></i> this is you.                  t');
+    createText('<i class="fa-solid fa-dog"></i> this is you.');
   }
 
   else if(value === "secret") {
@@ -125,12 +127,12 @@ async function getInputValue(){
 
   else if(value === ""){
     trueValue(value);
-    createCode("congratulations, you found a secret!","");
+    createCode("please enter something.","");
   }
   
   else{
     falseValue(value);
-    createText(`couldnt find ${value}. please type `)
+    createText(`couldnt find ${value}.`)
   }
 }
 
