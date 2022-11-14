@@ -77,7 +77,7 @@ async function getInputValue(){
   if(value === "cmds"){
     trueValue(value);
     
-    createCode("", "list of all the projects i've worked on");
+    createCode("osinfo", "what operating system i use");
     createCode("about", "info on me");
     createCode("socials", "where to find me");
     createCode("info", "website info e.g version number");
@@ -120,9 +120,10 @@ async function getInputValue(){
     createText('<i class="fa-solid fa-dog"></i> this is you.');
   }
 
-  else if(value === "secret") {
+  else if(value === "osinfo") {
     trueValue(value);
-    createText('');
+    createCode("Windows 11 Pro Insider Preview","Build 25236.rs.prerelease.221028-1618");
+    createCode("Windows Activated:","true")
   }
 
   else if(value === ""){
